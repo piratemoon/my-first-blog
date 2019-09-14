@@ -8,15 +8,14 @@
 		<h1><a href="/"> Piratemoon's Blog</a></h1>
 	</div>
 
-
+	{% for post in posts %}
 	<div>
-		<p>I published this on 14.09.2019, 12.57</p>
-		<h2><a href="">This is my first post!</a></h2>
-		<p>I am trying to make a post and now we are in HTML I am happier.</p>
-	</div>
-	<div>
-		<p>I published this on 14.09.2019, 12.59</p>
-		<h2><a href="">Post number two, wherein I fail</a></h2>
-		<p>I am a bit confused as to what the heck I have been doing aside from making a website.</p>
+	
+		<p>published: {{ post.published_date }}</p>
+		<h2><a href="">{{ post.title }}</a></h2>
+		<p>{{ post.text|linebreaksbr}}</p>
+	</div>	
+	{% endfor %}
+		
 </body>
 </html>
